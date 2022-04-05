@@ -2,12 +2,8 @@
 
 function controleurPrincipal($action){
     $lesActions = array();
-    $lesActions["defaut"] = "listeRestos.php";
-    $lesActions["liste"] = "listeRestos.php";
-    $lesActions["detail"] = "detailResto.php";
-    $lesActions["connexion"] = "connexion.php";
-    $lesActions["deconnexion"] = "deconnexion.php";
-    $lesActions["profil"] = "monProfil.php";
+    $lesActions["defaut"] = "listeExpo.php";
+
 
     
     if (array_key_exists ( $action , $lesActions )){

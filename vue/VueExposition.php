@@ -37,58 +37,53 @@
         </div>
     </nav>
 </header>
-<br>
-<div class="row m-3">
-    <p class="h1 text-center">Création d'une visite</p>
-</div>
-<div class="row m-3">
-    <div class="col-6">
-        <p><input id="date" type="date" value="AAAA-MM-JJ"><img src="../images/calendrier.jpeg" width="100" height="60"/></p>
-    </div>
-    <div class="col-6">
-        <p><input type="time" id="appt" name="appt"
-                  min="09:00" max="17:30" required>
-            <small>Le musée est ouvert de 9h à 18h</small></p>
-    </div>
-</div>
-<div class="row m-3">
-    <div class="col-4 ">
-        <p>Adulte : <input id="number" type="number" value="1" min="0"><img src="../images/help.png" width="30" height="10"/></p>
-        <div class="row">
-            <p>Enfant : <input id="number" type="number" value="1" min="0"><img src="../images/help.png" width="30" height="10"/></p>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="col-9">
-            <p>Selection d'exposition:</p>
-            <?php
-            foreach ($listeExpo as $expo){
-            ?>
-            <div>
-                <input type="checkbox" id="scales" name="scales"
-                       checked>
-                <label for="scales"><?php echo $expo['nom']?></label>
-            </div>
+<body>
+h1>Liste des expositions</h1>
+
+<?php
+for ($i = 0; $i < count($listeExpo); $i++) {
+
+    $lesPhotos = getPhotosByIdR($listeExpo[$i]['idR']);
+    ?>
+    <div class="card">
+        <div class="photoCard">
+            <?php if (count($lesPhotos) > 0) { ?>
+                <img src="photos/<?= $lesPhotos[0]["cheminP"] ?>" alt="photo des expositions" />
             <?php } ?>
-            <div>
-                <input type="checkbox" id="horns" name="horns">
-                <label for="horns">Exposition temporaire</label>
-            </div>
+
+
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="col-6">
-            <button type="nav-link" href="expovalide.php">Valider la visite</button>
+        <div class="descrCard"><?php echo "<a href='./?action=detail&idR=" . $listeExpo[$i]['idR'] . "'>" . $listeExpo[$i]['nomR'] . "</a>"; ?>
+            <br />
+            <?= $listeExpo[$i]["nom"] ?>
+            <?= $listeExpo[$i]["permanent"] ?>
+            <br />
+            <?= $listeExpo[$i]["tarifEnfant"] ?>
+            <?= $listeExpo[$i]["tarifAdulte"] ?>
         </div>
+        <div class="tagCard">
+            <ul id="tagFood">
+
+
+            </ul>
+
+
+        </div>
+
     </div>
-    <div class="col-8">
-        <p class="text-center"><img src="../images/Titanic.jpg" width="300" height="450"/></p>
-    </div>
-</div>
+
+
+
+
+
+    <?php
+}
+?>
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
 </body>
 </html>

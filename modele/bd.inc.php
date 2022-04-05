@@ -1,8 +1,8 @@
 <?php
 
 function connexionPDO() {
-    $login = "museum_vision";
-    $mdp = "Juninio96";
+    $login = "root";
+    $mdp = "root";
     $bd = "museum_vision";
     $serveur = "localhost";
 

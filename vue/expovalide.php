@@ -39,5 +39,14 @@
 </header>
 <br>
 <body>
-<p>Vous venez de créer la visite N°24</p>
+<div row m-3>
+    <div col>
+        <h3>Le prix est de 24.5€</h3>
+        <h4>Vous venez de créer la visite n°42</h4>
+        <p>il reste 12 places</p>
+    </div>
+    <div col>
+        <button type="nav-link" href="VueTarif.html.php">Revenir à la création de visite</button>
+    </div>
+</div>
 </body>
