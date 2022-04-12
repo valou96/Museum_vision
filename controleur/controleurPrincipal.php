@@ -3,6 +3,7 @@
 function controleurPrincipal($action){
     $lesActions = array();
     $lesActions["defaut"] = "listeExpo.php";
+    $lesActions["tarif"] = "visitetarif.php";
 
 
     

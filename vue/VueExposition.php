@@ -38,13 +38,13 @@
     </nav>
 </header>
 <body>
-h1>Liste des expositions</h1>
+<h1>Liste des expositions</h1>
 
 <?php
 for ($i = 0; $i < count($listeExpo); $i++) {
 
     $lesPhotos = getPhotosByIdR($listeExpo[$i]['idR']);
-    ?>
+?>
     <div class="card">
         <div class="photoCard">
             <?php if (count($lesPhotos) > 0) { ?>
@@ -76,7 +76,7 @@ for ($i = 0; $i < count($listeExpo); $i++) {
 
 
 
-    <?php
+<?php
 }
 ?>
 

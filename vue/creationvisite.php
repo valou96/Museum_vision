@@ -43,51 +43,58 @@
 </div>
 <div class="row m-3">
     <div class="col-6">
-        <p><input id="date" type="date" value="AAAA-MM-JJ"><img src="../images/calendrier.jpeg" width="100" height="60"/></p>
+        <p><input id="date" type="date" value="AAAA-MM-JJ"><img src="images/calendrier.jpeg" width="100" height="60"/></p>
     </div>
-    <div class="col-6">
-        <p><input type="time" id="appt" name="appt"
-                  min="09:00" max="17:30" required>
-            <small>Le musée est ouvert de 9h à 18h</small></p>
-    </div>
-</div>
-<div class="row m-3">
-    <div class="col-4 ">
-        <p>Adulte : <input id="number" type="number" value="1" min="0"><img src="../images/help.png" width="30" height="10"/></p>
-        <div class="row">
-            <p>Enfant : <input id="number" type="number" value="1" min="0"><img src="../images/help.png" width="30" height="10"/></p>
-        </div>
-        <br>
-        <br>
-        <br>
-        <div class="col-9">
-            <p>Selection d'exposition:</p>
-            <?php
-            foreach ($listeExpo as $expo){
-            ?>
-            <div>
-                <input type="checkbox" id="scales" name="scales"
-                       checked>
-                <label for="scales"><?php echo $expo['nom']?></label>
-            </div>
-            <?php } ?>
-            <div>
-                <input type="checkbox" id="horns" name="horns">
-                <label for="horns">Exposition temporaire</label>
-            </div>
-        </div>
-        <br>
-        <br>
-        <br>
+<form action="tarif" method="post">
         <div class="col-6">
-            <button type="nav-link" href="expovalide.php">Valider la visite</button>
+            <p><input type="time" id="appt" name="appt"
+                      min="09:00" max="17:30" required>
+                <small>Le musée est ouvert de 9h à 18h</small></p>
         </div>
     </div>
-    <div class="col-8">
-        <p class="text-center"><img src="../images/Titanic.jpg" width="300" height="450"/></p>
-    </div>
-</div>
+    <div class="row m-3">
+        <div class="col-4 ">
+            <p>Adulte : <input id="number" type="number" value="1" min="0"><img src="images/help.png" width="30" height="10"/></p>
+            <div class="row">
+                <p>Enfant : <input id="number" type="number" value="1" min="0"><img src="images/help.png" width="30" height="10"/></p>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-4">
+                <p>Selection d'exposition : </p>
+                <?php
+                foreach ($listeExpo as $expo){
+                ?>
+                <div>
+                    <input type="checkbox" id="scales" name="scales"
+                           checked>
+                    <label for="scales"><?php echo $expo['nom']?></label>
+                </div>
+                <?php } ?>
+                <div>
+                    <input type="checkbox" id="horns" name="horns">
+                    <label for="horns">Exposition temporaire : </label>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-5"
+                    <button name="vldvisite" type="submit">Valider la visite</button>
+                </div>
+                <div class="col-4"
+                    <button name="tarif" type="submit">Calculer le tarif</button>
+                </div>
+            </div>
 
+        </div>
+        <div class="col-8">
+            <p class="text-center"><img src="images/Titanic.jpg" width="300" height="450"/></p>
+        </div>
+    </div>
+</form>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
