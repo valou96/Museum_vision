@@ -18,7 +18,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="creationvisite.php">Création d'une visite</a>
+                                    <a class="nav-link active" aria-current="page" href="vueCreationVisite.php">Création d'une visite</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="visiteencours.php">Visite en cours</a>
