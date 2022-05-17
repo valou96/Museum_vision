@@ -12,34 +12,35 @@
         <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     </head>
     <body>
-    <nav>
-            
-            <ul id="menuGeneral">
-                <li><a href="./?action=accueil">Accueil</a></li> 
-                <li><a href="./?action=recherche"><img src="images/rechercher.png" alt="loupe" />Recherche</a></li>
-                <li></li> 
-                <li id="logo"><a href="./?action=accueil"><img src="images/logoBarre.png" alt="logo" /></a></li>
-                <li></li> 
-                <li><a href="./?action=cgu">CGU</a></li>
-                <li><a href="./?action=connexion"><img src="images/profil.png" alt="loupe" />Connexion</a></li>
-            </ul>
-    </nav>
-    <div id="bouton">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <ul id="menuContextuel">
-        <li><img src="images/logoBarre.png" alt="logo" /></li>
-        <?php if (isset($menuBurger)) { ?>
-            <?php for ($i = 0; $i < count($menuBurger); $i++) { ?>
-                <li>
-                    <a href="<?php echo $menuBurger[$i]['url']; ?>">
-                        <?php echo $menuBurger[$i]['label']; ?>
-                    </a>
-                </li>
-            <?php } ?>
-        <?php } ?>
-    </ul>
-
-    <div id="corps">
+        <header>
+            <nav>
+                <div class="container">
+                    <div class="row">
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <div class="container-fluid">
+                                <a class="navbar-brand" href="#">Museum Vision</a>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" aria-current="page" href="vueCreationVisite.php">Création d'une visite</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="visiteencours.php">Visite en cours</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled" href="creationexposition.php" tabindex="-1" aria-disabled="true">Création d'une exposition</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link disabled" href="statistique.php" tabindex="-1" aria-disabled="true">Statistiques</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </nav>
+        </header>

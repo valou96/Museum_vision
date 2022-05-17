@@ -2,7 +2,7 @@
 
 function controleurPrincipal($action){
     $lesActions = array();
-    $lesActions["defaut"] = "creationVisite.php";
+    $lesActions["defaut"] = "visitetarif.php";
     $lesActions["tarif"] = "visitetarif.php";
 
 

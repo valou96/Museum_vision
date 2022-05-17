@@ -8,15 +8,7 @@ include_once "$racine/modele/bd.expo.inc.php";
 ;
 
 // appel des fonctions permettant de recuperer les donnees utiles a l'affichage
-$checkedexpo = Array();
-$nbEnfant=0;
-$nbAdulte=0;
-$tarif=0;
-if(isset($_Post["nbAdulte"]) && isset($_Post["nbEnfants"])) {
-    $nbAdulte = $_POST["nbAdulte"];
-    $nbEnfant = $_POST["nbEnfant"];
-    $lastExpoID = getLastExpoId();
-}
+
 
 // traitement si necessaire des donnees recuperees
 ;

@@ -38,60 +38,6 @@ function getUtilisateurByMailU($mailU) {
     }
     return $resultat;
 }
-function getTarifEnfant($i) {
-    $resultatEnfant = array();
-
-    try {
-        $cnx = connexionPDO();
-        $req = $cnx->prepare("select TarifEnfant from exposition where Id=:idexposition");
-        $req->bindValue(':id', $i, PDO::PARAM_INT);
-        $req->execute();
-
-        $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        while ($ligne) {
-            $resultat[] = $ligne;
-            $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        }
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
-    }
-    return $resultatEnfant;
-}
-
-function getTarifAdulte($i) {
-    $resultatAdulte = array();
-
-    try {
-        $cnx = connexionPDO();
-        $req = $cnx->prepare("select TarifAdulte from exposition where Id=:idexposition");
-        $req->bindValue(':id', $i, PDO::PARAM_INT);
-        $req->execute();
-
-        $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        while ($ligne) {
-            $resultat[] = $ligne;
-            $ligne = $req->fetch(PDO::FETCH_ASSOC);
-        }
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
-    }
-    return $resultatAdulte;
-}
-function getIdExpoMax()
-{
-    try {
-        $cnx = connexionPDO();
-        $req = $cnx->prepare("select max(id) from exposition");
-        $req->execute();
-        $resultat = $req->fetch(PDO::FETCH_ASSOC);
-    } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
-        die();
-    }
-    return intval ($resultat) ;
-}
 
 
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
